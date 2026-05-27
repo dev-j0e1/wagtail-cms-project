@@ -1,20 +1,25 @@
-{% extends "base.html" %}
+{% extends "home/home_page.html" %}
 {% load wagtailcore_tags %}
 
 {% block content %}
 
-<h1>{{ page.title }}</h1>
+<div x-data="{}" class="blog-index-container" >
+    <a href="/">Home</a>
+    <h1 class="page-title">All Blogs</h1>
 
-{% for post in posts %}
+    {% for post in posts %}
 
-<h2>
-    <a href="{% pageurl post %}">
-        {{ post.title }}
-    </a>
-</h2>
+    <div class="blog-list-container">
+        <a class="blog-page-link" href="{% pageurl post %}">
+            {{ post.title }}
+        </a>
 
-<p>{{ post.summary }}</p>
+        <p class="blog-summary">{{ post.summary }}</p>
+    </div>
 
-{% endfor %}
+    {% endfor %}
+
+</div>
+
 
 {% endblock %}

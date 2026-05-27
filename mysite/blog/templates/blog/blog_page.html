@@ -1,20 +1,29 @@
-{% extends "base.html" %}
+{% extends "home/home_page.html" %}
 {% load wagtailcore_tags %}
 {% load wagtailimages_tags %}
 
 {% block content %}
 
-<h1>{{ page.title }}</h1>
 
-<p>{{ page.publication_date }}</p>
+<div x-data="{}" id="blogContent">
+    <nav>
+        <a href="/">Home</a>
+        <a href="/blog">Blog List</a>
+    </nav>
 
-<p>{{ page.summary }}</p>
+    <h1 class="page-title">{{ page.title }}</h1>
 
-{% image page.featured_image fill-800x400 %}
+    <p class="blog-publish-date"> Published on {{ page.publication_date }}</p>
 
-<div>
+    <p class="blog-summary">{{ page.summary }}</p>
 
-    {{ page.body|richtext }}
+    {% image page.featured_image fill-800x400 %}
+
+    <div>
+
+        {{ page.body|richtext }}
+
+    </div>
 
 </div>
 

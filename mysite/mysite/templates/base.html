@@ -18,12 +18,136 @@
         {% endif %}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+        <!-- alpine and tailwind CDNs  -->
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <!--  -->
+
+    <!-- had to put styles in here as I have no idea how to correctly link and get css to update with static file link ???  -->
+    <style>
+
+        @import "tailwindcss";
+        
+        :root {
+            --accent: #D19649;
+            --soft-gray: #F7F7F7;
+        }
+        img {
+            max-width: 100%; 
+            height: auto;    
+            display: block;  
+        }
+
+        * {
+            font-family: 'Teko', sans-serif;
+        }
+
+        body {
+            background: black;
+            background-image: url("../media/images/wallpaper.png");
+            display: flex; justify-content: center; align-items: center;
+        }
+
+        #navbar {
+            background: white;
+            border-radius: 25px;
+            padding: 50px;
+        }
+
+        .blog-index-container {
+            padding: 50px;
+            background: white;
+            border-radius: 25px;
+        }
+
+        .page-title {
+            font-size: clamp(50px, 20vw, 200px);
+            padding: 10px;
+            text-decoration: underline;
+            border-radius: 25px;
+        }
+        a {
+            text-decoration: underline;
+        }
+
+        .blog-list-container {
+            padding: 10px;
+            margin-bottom: 5px;
+            border: 5px solid gray;
+            border-radius: 25px;
+        }
+
+        .blog-list-container {
+            background: black;
+            display: flex; justify-content: center; align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            padding: 50px;
+            padding-top: 0px;
+            margin-bottom: 25px;
+        }
+        .blog-list-container * {
+            color: white;
+        }
+        .blog-page-link {
+            font-size: 40px;
+            color: var(--accent); 
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        #blogContent {
+            padding: 25px;
+
+            h1 {
+                font-size: 10vw;
+            }
+            * {
+                color: white;
+                margin: 25px;
+            }
+            a {
+                color: var(--accent);
+                margin: 10px;
+            }
+            .blog-publish-date {
+                color: var(--accent);
+                padding: 10px;
+                border: 2px solid var(--accent);
+                border-radius: 25px;
+                width: fit-content;
+            }
+        
+        }
+        .home-title {
+            font-size: 5vw;
+        }
+        
+        
+        .info {
+            width: 50%;
+
+        }
+
+        #homeBody {
+            background: white;
+            height: 70vh;
+            border-radius: 25px;
+            padding: 20px;
+            display: flex; justify-content: center; 
+        }
+
+    </style>
+    <!--  -->
+
         {# Force all links in the live preview panel to be opened in a new tab #}
         {% if request.in_preview_panel %}
         <base target="_blank">
         {% endif %}
 
-        {# Global stylesheets #}
+        {# Global stylesheets this just doesn't work properly for some reason .... #}
         <link rel="stylesheet" type="text/css" href="{% static 'css/mysite.css' %}">
 
         {% block extra_css %}

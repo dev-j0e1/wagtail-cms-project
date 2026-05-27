@@ -2,23 +2,34 @@
 
 {% block content %}
 
-<nav>
-
-<a href="/">Home</a>
-
-<a href="/blog/">Blog</a>
-
-</nav>
-
 <title>Home</title>
 
-<div class="blog-heading">
-    j0e1.dev's Blogpost CMS
-</div>
+<div x-data="{}">
 
-<div id="homeBody">
+    <div id="navbar">
+        <nav>
+            <a href="/blog/">Blog List</a>
+        </nav>
 
 
+        
+        <div class="home-title">
+            j0e1.dev's Blogpost CMS
+        </div>
+    </div>
+
+
+    <div id="homeBody"> 
+
+        <div class="info">
+            <p>This is my CMS project that I built to learn Wagtail and the CMS structure and how it differs from a normal Django application.</p>
+        </div>
+
+
+        {% block blogContent %}
+        {% endblock %}
+
+    </div>
 </div>
 
 {% endblock %}
