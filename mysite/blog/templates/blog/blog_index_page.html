@@ -4,7 +4,11 @@
 {% block content %}
 
 <div x-data="{}" class="blog-index-container" >
-    <a href="/">Home</a>
+
+    <nav class="top-nav">
+        <a href="/">Home</a>
+    </nav>
+
     <h1 class="page-title">All Blogs</h1>
 
     {% for post in posts %}
