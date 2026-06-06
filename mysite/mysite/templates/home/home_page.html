@@ -1,4 +1,5 @@
 {% extends "../base.html" %}
+{% load wagtailcore_tags %}
 
 {% block content %}
 
@@ -11,62 +12,15 @@
             <a href="/blog/">Blog List</a>
         </nav>
 
-
-        
-        <div class="home-title">
-            j0e1.dev's Blogpost CMS
-        </div>
     </div>
 
-
     <div id="homeBody">
-
         <div class="home-content-wrapper">
+            <div>
+                {% for block in self.test_body %}
+                    {% include_block block %}
 
-            <div class="hero-section">
-                <div class="info">
-                    <p>This is a custom Content Management System built with Wagtail and Django. I created this project to deepen my understanding of CMS architecture, content workflows, and how they differ from traditional Django applications.</p>
-                </div>
-            </div>
-
-            <div class="project-overview">
-                <h3>Project Highlights</h3>
-                <div class="highlights-grid">
-                    <div class="highlight-card">
-                        <h4>Built with Wagtail</h4>
-                        <p>A powerful, open-source CMS framework built on Django that makes content management intuitive and developer-friendly.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <h4>Custom Blog Engine</h4>
-                        <p>Fully-featured blog system with custom models, templates, and a clean interface for publishing and managing content.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <h4>Learning Project</h4>
-                        <p>A hands-on exploration of CMS concepts, page hierarchies, media management, and Wagtail's admin interface.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="about-project">
-                <h3>About This Project</h3>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>This CMS demonstrates key Wagtail features including:</p>
-                        <ul class="feature-list">
-                            <li>Page-based content hierarchy and inheritance</li>
-                            <li>Custom page types (Blog Index and Blog Posts)</li>
-                            <li>Media management with image optimization</li>
-                            <li>SEO-friendly URL structures</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="call-to-action">
-                <h3>Start Exploring</h3>
-                <p>Ready to see what's inside?</p>
-                <a href="/blog/" class="cta-button primary">Go to Blog</a>
+                {% endfor %}
             </div>
 
         </div>

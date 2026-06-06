@@ -1,0 +1,21 @@
+{% load wagtailimages_tags %}
+
+<section>
+    <div class="about-project">
+        <h3>{{ self.title }}</h3>
+        <div class="about-content">
+            <div class="about-text">
+                <p> {{ self.subtitle }}:</p>
+                <ul class="feature-list">
+                    {% for li in self.features %}
+                        <li>{{li.text}}</li>
+                    {% endfor %}
+                    <!-- <li>Page-based content hierarchy and inheritance</li>
+                    <li>Custom page types (Blog Index and Blog Posts)</li>
+                    <li>Media management with image optimization</li>
+                    <li>SEO-friendly URL structures</li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,16 @@
+{% load wagtailimages_tags %}
+
+<section>
+    <div class="project-overview">
+        <h3>{{ self.title }}</h3>
+        <div class="highlights-grid">
+            {% for hl in self.highlights %}
+                <div class="highlight-card">
+                    <h4>{{hl.title}}</h4>
+                    <p>{{hl.body}}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</section>

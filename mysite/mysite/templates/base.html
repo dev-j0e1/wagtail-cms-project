@@ -17,6 +17,7 @@
         <meta name="description" content="{{ page.search_description }}" />
         {% endif %}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="{% static 'css/mysite.css' %}">
 
         <!-- alpine and tailwind CDNs  -->
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -175,6 +176,7 @@
         .home-title {
             font-size: 5vw;
             color: white;
+            text-align: center;
         }
         
         .info {
@@ -216,13 +218,19 @@
             box-shadow: 0 40px 120px rgba(0, 0, 0, 0.35);
         }
 
-        .home-content-wrapper {
+        .home-content-wrapper  {
             width: 100%;
             display: flex;
             flex-direction: column;
             gap: 60px;
             max-width: 1200px;
             margin: 0 auto;
+            section {
+                margin: 20px;
+            }
+            * {
+                color: white;
+            }
         }
 
         .hero-section {

@@ -1,0 +1,11 @@
+{% load wagtailimages_tags %}
+
+<section>
+    <h1 class="info">{{ self.header_text }}</h1>
+
+    {% if self.background_image %}
+        {% image self.background_image max-1200x1200 as img %}
+            <img src="{{img.url}}" alt="{{img.title}}">
+    {% endif %}
+
+</section>
